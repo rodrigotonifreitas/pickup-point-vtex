@@ -1,0 +1,159 @@
+<article class="post-content__article">
+    <div>
+        <h1 class="post-content__title">Configurando o Pickup Store – Vtex</h1>
+        <div class="post-content__info noselect">
+            <span>
+                Escrito por <a class="post-content__author"
+                    href="https://www.agenciaeplus.io/knowledge/author/nadia">Nadia Faustinho</a>
+            </span>
+            <span> ― Atualizado em 5/09/2019</span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="wp-block-image">
+        <figure class="aligncenter"><img loading="lazy"
+                src="/knowledge/wp-content/uploads/2019/09/buy-online-pickup-in-store-graphic-feature.jpg" alt=""
+                class="wp-image-184"
+                srcset="/knowledge/wp-content/uploads/2019/09/buy-online-pickup-in-store-graphic-feature.jpg 850w, /knowledge/wp-content/uploads/2019/09/buy-online-pickup-in-store-graphic-feature-300x159.jpg 300w, /knowledge/wp-content/uploads/2019/09/buy-online-pickup-in-store-graphic-feature-768x407.jpg 768w"
+                sizes="(max-width: 850px) 100vw, 850px"></figure>
+    </div>
+
+
+
+    <p>Pickup store é um módulo da Vtex que gerencia a retirada e o estoque das lojas físicas de acordo com os pedidos
+        na plataforma Vtex. Os maiores beneficiados deste modulo são lojistas que possuem e disponibilizam retirada nas
+        lojas físicas, pois o Pickup store apresenta em tempo real as lojas mais próximas em um raio de até 50km. Com
+        ele é possível gerenciar estoque para cada loja e apresentar prazos personalizados dependendo da logística. Por
+        exemplo: caso o produto esteja disponível em outra loja, terá um tempo maior para retirada do que comparado a
+        uma loja que já tenha o produto disponível. Atualmente é apresentado na página do Checkout e é possível
+        pesquisar a partir da sua geolocalização ou de seu CEP, o controle para a exibição do modulo na página de
+        produto está defasada de acordo com a Vtex.</p>
+
+
+
+    <h4>Configuração:</h4>
+
+
+
+    <p>Para habilitar a Pickup store, é necessário cadastrar em
+        <code>Estoque &amp; entrega &gt; Pontos de retirada</code> e cadastre as lojas físicas do cliente.</p>
+
+
+
+    <figure class="wp-block-image"><img loading="lazy" src="https://i.ibb.co/MNjv7LV/print01.jpg" alt=""></figure>
+
+
+
+    <p>Após as lojas serem cadastradas, é necessário ir em <code>Estoque &amp; entrega &gt; Painéis</code> e cadastrar
+        um transportadora para cada loja caso queira gerenciar o estoque de cada uma delas, ou caso queira administrar
+        apenas as retiradas, faça o cadastro de apenas uma transportadora como foi feito em nosso exemplo:</p>
+
+
+
+    <figure class="wp-block-image"><img loading="lazy" src="https://i.ibb.co/3yZCsgY/print02.jpg" alt=""></figure>
+
+
+
+    <p>Faça o cadastro da transportadora <code>Retirada</code><strong> </strong>preenchendo o formulário, mas se atente,
+        pois no campo Pontos de retirada, você devera selecionar no campo de seleção abaixo os pontos de retirada.</p>
+
+
+
+    <figure class="wp-block-image"><img loading="lazy" src="https://i.ibb.co/XpwJV8x/print03.jpg" alt=""></figure>
+
+
+
+    <pre class="wp-block-preformatted"><strong>Obs</strong>: É aconselhável que crie uma tabela de frete grátis para inserir no cadastro da transportadora e ter a retirada em loja com valor 0, para isso, basta cadastrar uma planilha contendo um range de CEP a partir de:
+00000-00 - 99999-999
+com o valor 0.</pre>
+
+
+
+    <p>Após a conclusão do cadastro de transportadora, é necessário que vincule a mesma a uma doca</p>
+
+
+
+    <figure class="wp-block-image"><img loading="lazy" src="https://i.ibb.co/wQyhvdq/print04.jpg" alt=""></figure>
+
+
+
+    <pre
+        class="wp-block-preformatted"><strong>Obs</strong>: Para criar uma regra de frete especifica para cada ponto de retirada, é necessário cadastra-los separadamente e vincular a docas e estoques específicos para cada.</pre>
+
+
+
+    <p>Para o mapa ser renderizado na página, é necessário inserir a chave de API do google maps em
+        <code>Estoque &amp; entrega &gt; Configurações</code> no campo “<strong>Google Geolocation API</strong>“.<br> <a
+            rel="noreferrer noopener" aria-label=" (abre numa nova aba)"
+            href="https://developers.google.com/maps/documentation/javascript/get-api-key"
+            target="_blank">https://developers.google.com/maps/documentation/javascript/get-api-key</a></p>
+
+
+
+    <figure class="wp-block-image"><img loading="lazy" src="https://i.ibb.co/kQKfW19/print05.jpg" alt=""></figure>
+
+
+
+    <p>Com isso, basta configurar o checkout para fazer uso do pickup store.Para isso vamos até
+        <code>Checkout &gt; Checkout</code> e habilitar a versão 6.</p>
+
+
+
+    <figure class="wp-block-image"><img loading="lazy" src="https://i.ibb.co/Wcyn4DP/print06.jpg" alt=""></figure>
+
+
+
+    <p>E aplicar a mesma chave de API do google maps que adicionamos em
+        <code>Estoque &amp; entrega &gt; Configurações</code>, no campo logo abaixo “<strong>Google Maps API
+            Key</strong>” Com isso o Pickup store da Vtex deverá estar sendo renderizado no Checkout.</p>
+
+
+
+    <p>Abaixo listamos todas as documentações necessárias para o<strong> Pickup store</strong>:</p>
+
+
+
+    <p><strong>Configurar a retirada na loja (Pickup Store): </strong><a
+            href="https://help.vtex.com/tutorial/como-configurar-a-retirada-na-loja-pickup-store?locale=pt"
+            target="_blank" rel="noreferrer noopener"
+            aria-label=" (abre numa nova aba)">https://help.vtex.com/tutorial/como-configurar-a-retirada-na-loja-pickup-store?locale=pt</a>
+    </p>
+
+
+
+    <p><strong>Configurar Pontos de Retirada (Pickup Points): </strong><a
+            href="https://help.vtex.com/tutorial/configurar-pontos-de-retirada-pickup-points?locale=pt" target="_blank"
+            rel="noreferrer noopener"
+            aria-label=" (abre numa nova aba)">https://help.vtex.com/tutorial/configurar-pontos-de-retirada-pickup-points?locale=pt</a>
+    </p>
+
+
+
+    <p><strong>Configuração API KEY Google maps: </strong><a
+            href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank"
+            rel="noreferrer noopener"
+            aria-label=" (abre numa nova aba)">https://developers.google.com/maps/documentation/javascript/get-api-key</a>
+    </p>
+
+
+
+    <p><strong>Configurar geolocalização no checkout</strong>: <a
+            href="https://help.vtex.com/tutorial/geolocalizacao-no-checkout?locale=pt" target="_blank"
+            rel="noreferrer noopener"
+            aria-label=" (abre numa nova aba)">https://help.vtex.com/tutorial/geolocalizacao-no-checkout?locale=pt</a>
+    </p>
+
+
+
+    <p><strong>Video de como configurar o Logistics:</strong> <a href="https://www.youtube.com/watch?v=n0rNvf2umxo"
+            target="_blank" rel="noreferrer noopener"
+            aria-label=" (abre numa nova aba)">https://www.youtube.com/watch?v=n0rNvf2umxo</a></p>
+    <div class="post-content__info post-content__info--end noselect">
+        <span>― Atualizado em 5/09/2019</span>
+    </div>
+    <div class="post-content__tags noselect">
+        <span>Tags: </span><a class="post-content__tag"
+            href="https://www.agenciaeplus.io/knowledge/t/logistics/">Logistics</a><a class="post-content__tag"
+            href="https://www.agenciaeplus.io/knowledge/t/pickup-store/">pickup Store</a></div>
+</article>
